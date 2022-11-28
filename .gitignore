@@ -43,6 +43,10 @@ kak/plugins
 nvim/plugged
 coc
 
+#Ignore live files for copyq
+copyq/*.lock
+copyq/copyq_*
+
 #Machine dependent tools
 htop/htoprc
 pulse/
