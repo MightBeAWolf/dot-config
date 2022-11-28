@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "window.zoomLevel": 2,
+    "editor.fontSize": 18,
+    "editor.minimap.scale": 2,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "‘Fira Code’, Consolas, ‘Courier New’, monospace"
+}

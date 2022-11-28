@@ -1,0 +1,41 @@
+theme = "dracula"
+
+[editor.lsp]
+display-messages = true
+
+[editor.whitespace]
+render = "all"
+# or control each character
+# [editor.whitespace.render]
+# space = "all"
+# tab = "all"
+# newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[keys.normal]
+"C-right" = "move_next_word_end"
+"C-left" = "move_prev_word_start"
+"C-d" = ["search_selection", "extend_search_next"]
+"C-u" = "remove_primary_selection"
+"L" = "extend_to_line_end"
+"esc" = "keep_primary_selection"
+
+[keys.insert]
+"C-right" = "move_next_word_end"
+"C-left" = "move_prev_word_start"
+"A-h" = "move_char_left"
+"A-j" = "move_line_down"
+"A-k" = "move_line_up"
+"A-l" = "move_char_right"
+"esc" = "normal_mode"
+

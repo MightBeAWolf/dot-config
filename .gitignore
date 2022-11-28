@@ -1,0 +1,56 @@
+
+dconf/
+*__pycache__/
+configstore/
+
+#VS Codium
+VSCodium/Backups
+VSCodium/blob_storage
+VSCodium/Cache
+VSCodium/CachedData
+VSCodium/CachedExtensions
+VSCodium/Code\ Cache
+VSCodium/code.lock
+VSCodium/Cookies
+VSCodium/Cookies-journal
+VSCodium/Crash\ Reports
+VSCodium/databases
+VSCodium/Dictionaries
+VSCodium/exthost\ Crash\ Reports
+VSCodium/fileWatcher/
+VSCodium/GPUCache
+VSCodium/languagepacks.json
+VSCodium/Local\ Storage
+VSCodium/logs
+VSCodium/machineid
+VSCodium/Network\ Persistent\ State
+VSCodium/QuotaManager
+VSCodium/QuotaManager-journal
+VSCodium/Service\ Worker
+VSCodium/Session\ Storage
+VSCodium/storage.json
+VSCodium/TransportSecurity
+VSCodium/User/globalStorage
+VSCodium/User/workspaceStorage
+VSCodium/Crashpad/
+VSCodium/User/History/
+VSCodium/CachedExtension*
+
+# Plugins for nvim, kak and other editors
+# These should be installed unique to a 
+# machine
+kak/plugins
+nvim/plugged
+coc
+
+#Machine dependent tools
+htop/htoprc
+pulse/
+autorandr/
+
+# Ignore Intellig, because who needs it!
+JetBrains/
+
+# Misc configurations that should be ignored
+cataclysm-dda/
+
