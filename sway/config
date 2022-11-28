@@ -9,7 +9,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -221,5 +221,10 @@ bar {
 # gammastep - Adjust the color temperature of your screen
 #
 exec gammastep
+
+#
+# copyq - A clipboard manager daemon
+#
+exec copyq
 
 include /etc/sway/config.d/*
