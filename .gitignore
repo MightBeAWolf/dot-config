@@ -51,6 +51,7 @@ copyq/copyq_*
 htop/htoprc
 pulse/
 autorandr/
+pavucontrol.ini
 
 # Ignore Intellig, because who needs it!
 JetBrains/
