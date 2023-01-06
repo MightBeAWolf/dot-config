@@ -1,0 +1,3 @@
+[[language]]
+name = "python"
+config = { pylsp.plugins.pylint.enabled = true } 
