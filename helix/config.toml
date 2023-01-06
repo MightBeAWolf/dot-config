@@ -1,5 +1,18 @@
 theme = "dracula"
 
+[editor]
+# Displays a list of the open buffers at the top
+# of the terminal.
+#   - "never": Never show open buffers
+#   - "multiple": Show open buffers when there 
+#        is more than one
+#   - "always": Show open buffers even with only
+#        one open buffer
+bufferline = "multiple"
+# Set whether or not the editor will auto-save 
+# to a file when the window loses focus.
+auto-save = false
+
 [editor.lsp]
 display-messages = true
 
