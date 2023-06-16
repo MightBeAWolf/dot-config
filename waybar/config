@@ -5,7 +5,10 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/mode", "clock"],
-    "modules-right": [ "battery", "cpu", "temperature", "pulseaudio", "bluetooth", "network", "idle_inhibitor", "tray"],
+    "modules-right": [
+        "custom/updates", "battery", "cpu", "temperature", "pulseaudio",
+        "bluetooth", "network", "idle_inhibitor", "tray"
+    ],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -62,7 +65,7 @@
     },
     "tray": {
         //"icon-size": 11,
-        "spacing": 5
+        "spacing": 5,
     },
     "clock": {
         "format": " {:%H:%M   %b %e}",
@@ -81,11 +84,19 @@
         "interval": "10",
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
         "critical-threshold": 74,
-        "format-critical": "{icon} {temperatureC}糖",
-        "format": "{icon} {temperatureC}糖",
+        "format-critical": "{icon} {temperatureC}󰔄",
+        "format": "{icon} {temperatureC}󰔄",
         "format-icons": ["", "", ""],
-        "max-length": 5,
+        "max-length": 10,
         "min-length": 5
+    },
+    "custom/updates": {
+      "exec": "echo '1'",
+      "interval": 60,
+      "format": "{output} 󰚰",
+      "on-click": "alacritty -e yay",
+      "max-length": 10,
+      "min-length": 0
     },
     "battery": {
         "bat": "BAT1",
@@ -97,7 +108,7 @@
         "format": "{icon}",
         "format-discharging": " {icon}",
         "format-charging": " {icon}",
-        "format-icons": [ "", "", "", "", "", "", "", "", "", "" ],
+        "format-icons": [ "󰁺", "󰁻", "󰁼", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip-format": "Charge: {capacity}%\nPower: {power}W\n{timeTo}",
         "max-length": 5
     },

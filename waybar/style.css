@@ -100,7 +100,7 @@ borealis“, sometimes referred to as polar lights or northern lights.
 #waybar {
     background: @bg;
     color: @light;
-    font-family: "FiraCode NF", "Cantarell", "Font Awesome 5 Pro";
+    font-family: "FiraMono NerdFont", "Symbols Nerd Font", "Cantarell", "Font Awesome 5 Pro";
     font-size: 12px;
     font-weight: bold;
 }
@@ -122,6 +122,7 @@ borealis“, sometimes referred to as polar lights or northern lights.
 #tray,
 #backlight,
 #language,
+#custom-updates,
 #custom-cpugovernor {
     padding-left: 0.6em;
     padding-right: 0.6em;
