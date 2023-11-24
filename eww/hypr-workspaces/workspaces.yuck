@@ -1,0 +1,24 @@
+(deflisten workspaces :initial "[]" "bash scripts/get-workspaces")
+; (defvar workspaces "[{\"id\":\"1\",\"windows\":3},{\"id\":\"2\",\"windows\":1},{\"id\":\"3\",\"windows\":0},{\"id\":\"4\",\"windows\":0},{\"id\":\"5\",\"windows\":0},{\"id\":\"6\",\"windows\":0},{\"id\":\"7\",\"windows\":0},{\"id\":\"8\",\"windows\":0},{\"id\":\"9\",\"windows\":0},{\"id\":\"10\",\"windows\":0}]")
+(deflisten current_workspace :initial "1" "bash scripts/get-active-workspace")
+
+(defwidget workspace-entry [id]
+  (box :class "workspace-entry ${current_workspace == id ? "current" : "not-current"}" 
+    (eventbox :onclick "hyprctl dispatch workspace ${id}" 
+      ; (label :text "${current_workspace == id ? "" : ""}" :limit-width 3)
+      ; (label :text "${current_workspace == id ? " " : ""}")
+      (label :text "${current_workspace == id ? "" : ""}")
+    )
+  )
+)
+
+(defwidget workspaces []
+  (box :class "TEST 1" :spacing 5 :orientation "h" :space-evenly false
+    ; Used to ensure current_workpace is listened to
+    (label :text current_workspace :visible false)
+    ; Set the individual workspace entries
+    (for workspace in workspaces
+      (workspace-entry :id {workspace.id})
+    )
+  )
+)

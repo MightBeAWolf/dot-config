@@ -7,9 +7,8 @@
   background-color: #3a3a3a;
   color: #b0b4bc;
   padding: 10px;
+  font: 14px "Fira Code Nerd Font";
 }
-
-// Styles on classes (see eww.yuck for more information)
 
 .sidestuff slider {
   all: unset;
@@ -49,7 +48,13 @@
 .label-ram {
   font-size: large;
 }
-.workspaces button:hover {
-  color: #D35D6E;
+
+.workspace-entry.not-current {
+  color: #737373;
+  // padding-left: 4px
+}
+
+.workspace-entry.current {
+  color: #ffffff;
 }
 
