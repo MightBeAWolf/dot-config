@@ -18,9 +18,6 @@
     (metric :label "󰍛"
             :value {EWW_RAM.used_mem_perc}
             :onchange "")
-    (metric :label "󰍛"
-            :value {EWW_RAM.used_mem_perc}
-            :onchange "")
     (metric :label "󰆼"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
             :onchange "")
