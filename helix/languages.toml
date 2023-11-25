@@ -1,0 +1,9 @@
+
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+
+[[language]]
+name = "python"
+scope = "source.python"
+language-servers = [ "ruff-lsp" ]
+
