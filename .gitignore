@@ -36,12 +36,17 @@ VSCodium/Crashpad/
 VSCodium/User/History/
 VSCodium/CachedExtension*
 
+# Cadence
+cadence/
+Cadence*/
+
 # Plugins for nvim, kak and other editors
 # These should be installed unique to a 
 # machine
 kak/plugins
 nvim/plugged
 coc
+helix/runtime
 
 #Ignore live files for copyq
 copyq/*.lock
@@ -58,4 +63,6 @@ JetBrains/
 
 # Misc configurations that should be ignored
 cataclysm-dda/
+monitors.xml
+
 
