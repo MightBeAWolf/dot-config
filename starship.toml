@@ -1,4 +1,7 @@
 
+format = '''
+[┌──────────────────────────](bold green)
+[│](bold green)$all[└─](bold green)$character'''
 
 
 [aws]
@@ -6,9 +9,9 @@ symbol = "  "
 
 [character]
 format = "$symbol "
-success_symbol = "[NOR ❯](bold green)"
-error_symbol = "[NOR ❯](bold red)"
-vicmd_symbol = "[CMD ❮](bold blue)"
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold blue)"
 
 [conda]
 symbol = " "
