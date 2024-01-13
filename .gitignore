@@ -64,7 +64,6 @@ JetBrains/
 # Misc configurations that should be ignored
 cataclysm-dda/
 monitors.xml
-
 EOS-greeter.conf
 KDE/
 Slack/
@@ -108,6 +107,8 @@ kmixrc
 knfsshare
 konsolerc
 konsolesshconfig
+kritadisplayrc
+kritarc
 krunnerrc
 kscreenlockerrc
 ksmserverrc
