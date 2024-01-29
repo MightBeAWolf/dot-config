@@ -1,3 +1,4 @@
+use-grammars = { except = ["gemini"] }
 
 [language-server.ruff-lsp]
 command = "ruff-lsp"

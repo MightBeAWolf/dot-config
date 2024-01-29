@@ -142,4 +142,9 @@ wezterm/
 xsettingsd/
 QtProject.conf
 systemd/user/eos*
+evolution/
+gnome-initial-setup-done
+ibus/
+monitors.xml~
+
 
