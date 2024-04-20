@@ -64,6 +64,9 @@ exec swayidle -w \
     # Kill focused window
     bindsym $mod+q kill
 
+    # Open 1Password quick access
+    bindsym Ctrl+Shift+Space exec '1password --quick-access'
+
     # Start your launcher
     set $menu tofi-run | xargs swaymsg exec --
     bindsym $mod+Shift+Return exec $menu
@@ -104,6 +107,13 @@ exec swayidle -w \
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+#
+# Floating windows
+#
+for_window [class="1Password"] floating enable
+
+
 #
 # Workspaces:
 #
