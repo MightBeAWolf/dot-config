@@ -147,4 +147,12 @@ gnome-initial-setup-done
 ibus/
 monitors.xml~
 
+.gsd-keyboard.settings-ported
+1Password/
+GNOME-xdg-terminals.list
+libreoffice/
+op/
+packer/
+xdg-terminals.list
+
 
