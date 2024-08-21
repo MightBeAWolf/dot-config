@@ -62,6 +62,7 @@ pavucontrol.ini
 JetBrains/
 
 # Misc configurations that should be ignored
+user-dirs.dirs
 cataclysm-dda/
 monitors.xml
 EOS-greeter.conf
@@ -156,3 +157,12 @@ packer/
 xdg-terminals.list
 
 
+# Browsers
+BraveSoftware/
+chromium/
+google-chrome-beta/
+google-chrome-unstable/
+google-chrome/
+microsoft-edge-dev/
+vivaldi-snapshot/
+vivaldi/
