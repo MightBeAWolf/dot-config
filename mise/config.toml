@@ -1,0 +1,18 @@
+[tools]
+usage = "latest"
+
+[tasks.pyvenv]
+# python{{arg(name="version", var="3")}} -m venv .venv
+run="""
+python3 -m venv .venv
+(
+  source .venv/bin/activate
+  pip install --upgrade pip
+  [[ -e ./requirements.txt ]] && pip install -r requirements.txt
+  pip install ruff-lsp
+)
+touch .mise.toml
+mise trust --show | grep -q 'untrusted' && mise trust -y .mise.toml
+mise toml set -y env._\\.python\\.venv\\.path .venv
+mise toml set -y -t bool env._\\.python\\.venv\\.create true
+"""
