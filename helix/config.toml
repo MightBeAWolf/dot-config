@@ -128,6 +128,9 @@ color-modes = true
 # Default: true
 # auto-pairs = 
 
+# Desc: Minimum severity to show a diagnostic after the end of line
+# Default: "disable"
+end-of-line-diagnostics = "hint"
 
 
 [editor.statusline]
@@ -386,6 +389,16 @@ render = true
 # other bindings must be used instead, such as arrow keys or C-n/C-p.
 # Default: false
 # supersede-menu = 
+
+
+[editor.inline-diagnostics]
+# Maximum Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+# Default: "disable"
+cursor-line = "error"
+# Maximum Minimum severity to show a diagnostic on other lines.
+# Default: "disable"
+# other-lines = "error"
 
 
 [keys.normal]
