@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+#MISE description="Backup my home directory using restic"
+#MISE dir="{{ env.HOME }}"
+
+#USAGE arg "<file>" help="The repository file"
+#USAGE arg "<passphrase_secret_ref>" help="The 1Password secret reference" default="op://Local Cluster/Restic Backup Passphrase/password"
+
+repository="${usage_file:?}"
+passphrase_secret_ref="${usage_passphrase_secret_ref:?}"
+
+op whoami >/dev/null 2>/dev/null || eval "$(op signin)"
+
+restic init \
+  --password-command "op read '${passphrase_secret_ref:?}'" \
+  -r "${repository:?}" \
+  >/dev/null 2>/dev/null
+
+restic backup \
+  --password-command "op read '${passphrase_secret_ref:?}'" \
+  -r "${repository:?}" \
+  -e '.1password' \
+  -e '.airshipsgame' \
+  -e '.ansible' \
+  -e '.bash_history' \
+  -e '.bash_logout' \
+  -e '.bashrc.d' \
+  -e '.cache' \
+  -e '.cargo' \
+  -e '.cert' \
+  -e '.config' \
+  -e '.factorio' \
+  -e '.font' \
+  -e '.fonts.conf' \
+  -e '.fzf' \
+  -e '.fzf.bash' \
+  -e '.gitconfig' \
+  -e '.gnupg' \
+  -e '.gtkrc-2.0' \
+  -e '.guestfish' \
+  -e '.java' \
+  -e '.local' \
+  -e '.mozilla' \
+  -e '.openjfx' \
+  -e '.paradoxlauncher' \
+  -e '.pki' \
+  -e '.pulse-cookie' \
+  -e '.python_history' \
+  -e '.rustup' \
+  -e '.ssh' \
+  -e '.steam' \
+  -e '.terraform.d' \
+  -e '.wget-hsts' \
+  -e '.hidden' \
+  -e '**.mp4' \
+  -e '**.mkv' \
+  -e '**.avi' \
+  -e '**/.git' \
+  -e '**/.github' \
+  -e '**.egg' \
+  -e '**.egg-info' \
+  --iexclude 'projects/virtual-infrastructure' \
+  --iexclude 'projects/setups' \
+  --iexclude 'admin' \
+  --iexclude '**/games' \
+  --iexclude '**/download' \
+  --iexclude '**/downloads' \
+  --iexclude '**/downloading' \
+  --iexclude '**/toprocess' \
+  --iexclude '**/to-process' \
+  --iexclude '**/to-processes' \
+  --iexclude '**/toprocesses' \
+  --iexclude '**/tmp' \
+  --iexclude '**/venv' \
+  --iexclude '**/.venv' \
+  --iexclude '**.pyc' \
+  --iexclude '**backup**' \
+  --iexclude '**bkup**' \
+  ./
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#MISE description="Create a python virtual environment in the cwd"
+#MISE dir="{{ cwd }}"
+
+#USAGE flag "-v --python-version [python_version]" default="python3"
+#USAGE complete "python_version" run="mise ls python -q "
+#complete "python_version" run="(mise ls python -q | tail -n +1 | awk '{print $1$2}' sed 's/\.[0-9]\+$//'; ls -1 /usr/bin/python* | sed -e 's|/usr/bin/||' -e '/config/d' -e '/->/d') | sort | uniq"
+
+python_version="${usage_python_version:?}"
+
+"${python_version}" -m venv .venv
+(
+  source .venv/bin/activate
+  pip install --upgrade pip
+  [[ -e ./requirements.txt ]] && pip install -r requirements.txt
+  pip install ruff-lsp
+)
+touch .mise.toml
+mise trust --show | grep -q 'untrusted' && mise trust -y .mise.toml
+mise toml set -y env._.python.venv.path .venv
+mise toml set -y -t bool env._.python.venv.create true
