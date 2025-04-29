@@ -2,7 +2,7 @@ use-grammars = { except = ["gemini"] }
 
 [language-server.ruff]
 command = "ruff"
-args = ["server"]
+args = ["server", "--config","line-length=80"]
 
 [[language]]
 name = "python"
