@@ -1,10 +1,11 @@
 use-grammars = { except = ["gemini"] }
 
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 [[language]]
 name = "python"
 scope = "source.python"
-language-servers = [ "ruff-lsp" ]
+language-servers = [ "ruff" ]
 
