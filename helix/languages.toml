@@ -1,5 +1,18 @@
 use-grammars = { except = ["gemini"] }
 
+[language-server.typos]
+# typos-lsp must be on your PATH, or otherwise change this to an absolute path to typos-lsp
+command = "typos-lsp"
+# Logging level of the language server. Defaults to error.
+# Run with helix -v to output LSP logs to the editor log (:log-open)
+environment = {"RUST_LOG" = "error"}
+# Custom config. Used together with a config file found in the workspace or its parents,
+# taking precedence for settings declared in both. Equivalent to the typos `--config` cli argument.
+config.config = "~/.config/typos-lsp/typos.toml"
+# How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
+# Defaults to Info.
+config.diagnosticSeverity = "Info"
+
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--config","line-length=80"]
@@ -8,4 +21,8 @@ args = ["server", "--config","line-length=80"]
 name = "python"
 scope = "source.python"
 language-servers = [ "ruff" ]
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "markdown-oxide", "typos"]
 
