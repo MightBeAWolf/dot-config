@@ -26,3 +26,16 @@ language-servers = [ "ruff" ]
 name = "markdown"
 language-servers = ["marksman", "markdown-oxide", "typos"]
 
+[[language]]
+name = "rust"
+auto-format = true
+formatter = { command = "cargo", args = ["fmt", "--", "--stdin"] }
+language-servers = ["rust-analyzer"]
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+# Ask rust-analyzer to run Clippy when checking (stronger diagnostics)
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
