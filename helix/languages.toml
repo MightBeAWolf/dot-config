@@ -39,3 +39,35 @@ command = "rust-analyzer"
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
+[[language]]
+name = "bash"
+language-servers = ["bash-language-server"]
+auto-format = true
+
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+environment = { NODE_OPTIONS = "--no-deprecation" }
+
+[language-server.bash-language-server.config.bashIde]
+# quiet the server's own chatter — it all lands in your log as [ERROR]
+logLevel = "warning"
+
+# background analysis: 500 files by default, 0 disables it entirely
+backgroundAnalysisMaxFiles = 500
+
+# widen if you edit extensionless scripts or odd suffixes
+globPattern = "**/*@(.sh|.inc|.bash|.command)"
+
+# shellcheck
+shellcheckPath = "shellcheck"          # empty string disables linting
+shellcheckArguments = "-e SC1091"      # --shell/--format/--external-sources already passed
+
+# shfmt (this is what gives you :format)
+shfmt.path = "shfmt"                   # empty string disables formatting
+shfmt.languageDialect = "bash"         # auto | bash | posix | mksh | bats
+shfmt.simplifyCode = false
+shfmt.caseIndent = true
+shfmt.spaceRedirects = true
+shfmt.ignoreEditorconfig = false       # leave false if you have .editorconfig
+
